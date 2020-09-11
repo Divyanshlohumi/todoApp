@@ -1,0 +1,24 @@
+<%- include ('partials/header') %>
+
+<form action="/add" method="POST" style="margin-top: 100px;">
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter Name" name="task[name]">
+    </div>
+    <div class="form-group">
+        <label for="desc">Description:</label>
+        <textarea class="form-control" id="desc" rows="3" name="task[desc]"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="creator">Creator:</label>
+        <input type="text" class="form-control" id="creator" placeholder="Enter Creator Name" name="task[creator]">
+    </div>
+    <div class="form-group">
+        <label for="duration">Duration:</label>
+        <input type="number" step="0.01" min="0" class="form-control" id="duration" placeholder="Enter Duration" name="task[duration]">
+    </div>
+    <input type="hidden" name="task[createdAt]" value="<%= new Date() %>">
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<%- include ('partials/footer') %>

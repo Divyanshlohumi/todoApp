@@ -1,0 +1,22 @@
+<%- include ('partials/header') %>
+
+    <div class="container" style="margin-top: 100px;">
+        <% tasks.forEach((task) => { %>
+            <div class="card">
+                <div class="card-header"><%= task.name %></div>
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                        <p><%= task.desc %></p>
+                        <footer class="blockquote-footer"><%= task.creator %></footer>
+                    </blockquote>
+                </div>
+            </div>
+            <script>
+                setTimeout(()=>{
+                    location.reload()
+                }, <%= task.duration %>*60*1000)
+            </script>
+        <% }); %>
+    </div>
+
+<%- include ('partials/footer') %>
